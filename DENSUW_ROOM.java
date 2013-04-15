@@ -19,20 +19,36 @@
  * MA 02110-1301, USA.
  * 
  */
-public interface Room{
+public class DENSUW_Room implements Room{
 	
-	//Gets the full description of the room
-	public String fullDesc();
+	private String mShortDesc;
+	private String mFullDesc;
+	private Item[] mItems;
+	private Baddie mBaddie;
+	private String mName;
 	
-	//Gets the short description of the room
-	public String shortDesc();
+	public DENSUW_Room(){
+		
+	}
 	
-	//Gets the Item array related with this room
-	public Item[] getItems();
+	public String fullDesc(){
+		return mFullDesc;
+	}
 	
-	//Gets the Baddie in this room if there is one
-	public Baddie getBaddie();
+	public String shortDesc(){
+		return mShortDesc;
+	}
 	
-	//Gets the name of this room
-	public String getName();
+	public Item[] getItems(){
+		return mItems;
+	}
+	
+	public Baddie getBaddie(){
+		return mBaddie;
+	}
+	
+	public String getName(){
+		return mName;
+	}
+	
 }

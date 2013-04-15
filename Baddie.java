@@ -19,20 +19,44 @@
  * MA 02110-1301, USA.
  * 
  */
-public interface Room{
+public class Baddie{
 	
-	//Gets the full description of the room
-	public String fullDesc();
+	private int mDamage;
+	private int mArmor;
+	private String mName;
 	
-	//Gets the short description of the room
-	public String shortDesc();
+	/** This constructs the baddie object
+	 * 
+	 * name: Baddie
+	 * @param aName the name of the enemy
+	 * @param aDamage the damage of the enemy
+	 * @param aArmor
+	 * 
+	 */
+	public Baddie(String aName, int aDamage, int aArmor){
+		mName = aName;
+		mDamage = aDamage;
+		mArmor = aArmor;
+	}
 	
-	//Gets the Item array related with this room
-	public Item[] getItems();
+	/** Gets the damage of this enemy
+	 *  @return the damage of this enemy
+	 */
+	public int getDamage(){
+		return mDamage;
+	}
 	
-	//Gets the Baddie in this room if there is one
-	public Baddie getBaddie();
+	/** Gets the name of this enemy
+	 * 	@return the name of this enemy
+	 */
+	public String getName(){
+		return mName;
+	}
 	
-	//Gets the name of this room
-	public String getName();
+	/** Gets the armor value of this enemy
+	 *  @return the armor value of this enemy
+	 */
+	public int getArmor(){
+		return mArmor;
+	}
 }
