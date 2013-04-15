@@ -1,5 +1,5 @@
 /*
- * DENSUW_ROOM.java
+ * DENSUW_ITEM.java
  * 
  * Copyright 2013 Robin McNally
  * 
@@ -18,37 +18,13 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  * MA 02110-1301, USA.
  * 
+ * 
  */
-public class DENSUW_ROOM implements Room{
+public class DENSUW_WORLD {
+	private DENSUW_ROOM mWorld[];
 	
-	private String mShortDesc;
-	private String mFullDesc;
-	private Item[] mItems;
-	private Baddie mBaddie;
-	private String mName;
-	
-	public DENSUW_Room(){
-		
+	public DENSUW_WORLD(int aX, int aY, int aZ){
+		mWorld = new DENSUW_ROOM[aX][aY][aZ];
 	}
-	
-	public String fullDesc(){
-		return mFullDesc;
-	}
-	
-	public String shortDesc(){
-		return mShortDesc;
-	}
-	
-	public Item[] getItems(){
-		return mItems;
-	}
-	
-	public Baddie getBaddie(){
-		return mBaddie;
-	}
-	
-	public String getName(){
-		return mName;
-	}
-	
 }
+
