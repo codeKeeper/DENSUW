@@ -1,5 +1,5 @@
 /*
- * DENSUW_ITEM.java
+ * DENSUW_HALL.java
  * 
  * Copyright 2013 Robin McNally
  * 
@@ -20,28 +20,12 @@
  * 
  * 
  */
- 
-public interface DENSUW_ITEM{
+ public class DENSUW_HALL{
+	protected DENSUW_ROOM[] mEndpoints;
+	protected String[] mOrg_Directions;
+	protected int mWeight = 0;
 	
-	public class DENSUW_PUZZLEITEM implements DENSUW_ITEM{
-		private DENSUW_SOLUTION mSolution;
-		private String mDefinition;
+	public DENSUW_HALL(){
 		
-		public DENSUW_PUZZLEITEM(DENSUW_SOLUTION aSolution, String aDef){
-			mSolution = aSolution;
-			mDefinition = aDef;
-		}
-		
-		public boolean isCorrect(String aGuess){
-			return mSolution.isCorrect(aGuess);
-		}
-
-		public String printDef(){
-			System.out.println(mDefinition);
-		}
 	}
-
-	public class DENSUW_WEAPON implements DENSUW_ITEM{
-		//To implement
-	}
-}
+ }

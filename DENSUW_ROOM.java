@@ -18,13 +18,18 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  * MA 02110-1301, USA.
  * 
- */
-public class DENSUW_ROOM implements Room{
+ */ 
+
+import java.util.LinkedList;
+
+public class DENSUW_ROOM{
 	
+	protected LinkedList<DENSUW_ITEM> mItems = new LinkedList<DENSUW_ITEM>();
+	protected LinkedList<DENSUW_SOLUTION> mSolutions = new LinkedList<DENSUW_SOLUTION>(); 
+	protected LinkedList<DENSUW_HALL> mEdges = new LinkedList<DENSUW_HALL>();
+	private Baddie mBaddie;
 	private String mShortDesc;
 	private String mFullDesc;
-	private Item[] mItems;
-	private Baddie mBaddie;
 	private String mName;
 	
 	public DENSUW_Room(){

@@ -21,27 +21,14 @@
  * 
  */
  
-public interface DENSUW_ITEM{
+public class DENSUW_SOLUTION{
+	private String mName;
 	
-	public class DENSUW_PUZZLEITEM implements DENSUW_ITEM{
-		private DENSUW_SOLUTION mSolution;
-		private String mDefinition;
-		
-		public DENSUW_PUZZLEITEM(DENSUW_SOLUTION aSolution, String aDef){
-			mSolution = aSolution;
-			mDefinition = aDef;
-		}
-		
-		public boolean isCorrect(String aGuess){
-			return mSolution.isCorrect(aGuess);
-		}
-
-		public String printDef(){
-			System.out.println(mDefinition);
-		}
+	public DENSUW_SOLUTION(String aName){
+		mName = aName;
 	}
-
-	public class DENSUW_WEAPON implements DENSUW_ITEM{
-		//To implement
+	
+	public boolean isCorrect(String aString){
+		return mName == aString;
 	}
 }

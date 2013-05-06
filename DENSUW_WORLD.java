@@ -20,11 +20,56 @@
  * 
  * 
  */
+ 
+//This is a graph
 public class DENSUW_WORLD {
-	private DENSUW_ROOM mWorld[];
+	private LinkedList<DENSUW_ROOM> mVertices;
+	private LinkedList<DENSUW_HALL> mEdges;
 	
-	public DENSUW_WORLD(int aX, int aY, int aZ){
-		mWorld = new DENSUW_ROOM[aX][aY][aZ];
+	public DENSUW_WORLD(){
+		mVertices = new LinkedList<DENSUW_ROOM>();
+		mEdges = new LinkedList<DENSUW_HALL>();
+	}
+	
+	public int numRooms(){
+		return mVertices.size();
+	}
+	
+	public int numHalls(){
+		return mEdges.size();
+	}
+	
+	public Iterable<DENSUW_ROOM> rooms(){
+		return mVertices;
+	}
+	
+	public Iterable<DENSUW_HALL> halls(){
+		return mEdges;
+	}
+	
+	public Iterable<DENSUW_HALL> incidentHalls(DENSUW_ROOM aRoom){
+		return aRoom.mEdges;
+	}
+	
+	public DENSUW_ROOM[] endRooms(DENSUW_HALL aHall){
+		return aHall.mEndpoints;
+	}
+	
+	public DENSUW_ROOM opposite(DENSUW_ROOM aRoom, DENSUW_HALL aHall){
+		for (DENSUW_HALL lCur : incidentHalls(aRoom)){
+			if (lCur == aHall){
+				if (aHall.mEndpoints[0] == aRoom){
+					return aHall.mEndpoints[1];
+				} else {
+					return aHall.mEndpoints[0];
+				}
+			}
+		}
+		return null;
+	}
+	
+	public boolean areAdjacent(DENSUW_ROOM aRoom, DENSUW_ROOM aSecond){
+		
 	}
 }
 
